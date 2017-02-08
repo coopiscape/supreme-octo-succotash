@@ -1,0 +1,31 @@
+<!-- insert above </head> -->
+<script type='text/javascript'>
+//<![CDATA[
+// Recent Post Gallery
+function arlinagrid(a){
+	for(var t=a.feed.entry||[],e=['<div class="recent-gallery">'],i=0;i<t.length;++i){
+		for(var l=t[i],r=l.title.$t,n=l.media$thumbnail?l.media$thumbnail.url:"http://2.bp.blogspot.com/-4fCf53FqYKM/Vccsy7apoZI/AAAAAAAAK4o/XJkv3RkC0pw/s1600/default%2Bimage.png",s=n.replace("s72-c","s"+arlina_thumbs+"-c"),h=l.link||[],c=0;c<h.length&&"alternate"!=h[c].rel;++c);var d=h[c].href,m='<img src="'+s+'" width="'+arlina_thumbs+'" height="'+arlina_thumbs+'"/>',p=arlina_title?'<span class="ptitle">'+r+"</span>":"",g='<a href="'+d+'" target="_blank" title="'+r+'">'+m+p+"</a>";e.push('<div class="gallerytem">',g,"</div>")}e.push("</div>"),document.write(e.join(""))}
+//]]>
+</script>
+
+
+
+/* CSS Recent Post Gallery */
+.recent-gallery {padding:0;clear:both;}
+.recent-gallery:after {content:"";display:table;clear:both;}
+.recent-gallery .gallerytem{display:inline-block;position:relative;margin:6px 0;overflow:hidden;}
+.recent-gallery .gallerytem a{position:relative;float:left;margin:0 6px;text-decoration:none}
+.recent-gallery .gallerytem .ptitle{background:rgba(0,0,0,.7);display:block;clear:left;font-size:10px;line-height:1.3em;position:absolute;text-align:left;bottom:3px;left:3px;right:3px;top:3px;color:#fff;padding:5px;word-wrap:break-word;overflow:hidden;visibility:hidden;opacity:0;backface-visibility:hidden;transition:all .2s}
+.recent-gallery .gallerytem:hover .ptitle{visibility:visible;opacity:1}
+.recent-gallery a img{background:#fdfdfd;float:left;padding:2px;border:1px solid #e3e3e3;transition:all .3s}
+.recent-gallery a:hover img {border-color:#bbb;}
+
+
+<!-- add gadget -->
+<script>
+var arlina_thumbs = 72; 
+var arlina_title = true; 
+</script>
+<script src="/feeds/posts/summary?max-results=9&amp;alt=json-in-script&amp;callback=arlinagrid"></script>
+
+<!-- Sumber : http://www.arlinadzgn.com/2015/08/cara-memasang-widget-recent-post-gallery.html -->
