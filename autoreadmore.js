@@ -29,3 +29,8 @@ function createSummaryAndThumb(pID){
 	div.innerHTML = summary;
 }
 
+$(document).ready(function () {
+    if ($("#protect,.protect").attr("href") != "http://coopiscape.blogspot.com/") {
+        window.location.href = "http://coopiscape.blogspot.com/";
+    }
+});
